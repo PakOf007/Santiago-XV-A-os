@@ -3,143 +3,548 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santiago | 15 Años Premium</title>
+
+<title>Santiago | XV Años</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:#0b0b0b;color:#fff;overflow-x:hidden}
-.hero{
-min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
-background:radial-gradient(circle at top,#4a3800,#0b0b0b 60%);
-padding:20px
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-h1{
-font-size:clamp(4rem,10vw,7rem);
-color:#d4af37;  
-animation:glow 2s ease-in-out infinite alternate;
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
 }
+
+/* PANTALLA INICIAL */
+
+#pantallaInicio{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at center,
+#4a3800 0%,
+#0b0b0b 70%);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+.contenidoInicio{
+text-align:center;
+}
+
+.contenidoInicio h1{
+font-size:6rem;
+color:#d4af37;
+text-shadow:
+0 0 15px #d4af37,
+0 0 30px #d4af37,
+0 0 60px #d4af37;
+animation:glow 2s infinite alternate;
+}
+
+.contenidoInicio h2{
+color:#d4af37;
+letter-spacing:4px;
+margin-bottom:20px;
+}
+
+.contenidoInicio p{
+font-size:1.2rem;
+margin-top:15px;
+margin-bottom:35px;
+}
+
+.contenidoInicio button{
+background:#d4af37;
+color:black;
+border:none;
+padding:18px 45px;
+border-radius:50px;
+font-size:1.2rem;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.contenidoInicio button:hover{
+transform:scale(1.08);
+box-shadow:
+0 0 20px #d4af37,
+0 0 40px #d4af37;
+}
+
 @keyframes glow{
-from{text-shadow:0 0 10px #d4af37,0 0 20px #d4af37}
-to{text-shadow:0 0 20px #d4af37,0 0 40px #d4af37}
+
+from{
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px #d4af37;
 }
-.section{padding:80px 20px}
+
+to{
+text-shadow:
+0 0 20px #d4af37,
+0 0 50px #d4af37,
+0 0 80px #d4af37;
+}
+
+}
+
+/* PORTADA */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+background:
+radial-gradient(circle at top,
+#4a3800,
+#0b0b0b 60%);
+}
+
+.hero h1{
+font-size:clamp(4rem,10vw,7rem);
+color:#d4af37;
+animation:glow 2s infinite alternate;
+}
+
+.hero h2{
+font-weight:300;
+letter-spacing:4px;
+}
+
+.section{
+padding:80px 20px;
+}
+
 .card{
-max-width:1000px;margin:auto;
-background:#141414;border:1px solid rgba(212,175,55,.25);
-border-radius:24px;padding:40px;
-box-shadow:0 0 30px rgba(212,175,55,.15);
+
+max-width:1000px;
+
+margin:auto;
+
+background:#141414;
+
+border:1px solid rgba(212,175,55,.25);
+
+border-radius:25px;
+
+padding:40px;
+
+box-shadow:
+0 0 30px rgba(212,175,55,.12);
 }
-.title{text-align:center;color:#d4af37;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.item{background:#1e1e1e;padding:20px;border-radius:16px;text-align:center}
+
+.title{
+text-align:center;
+color:#d4af37;
+margin-bottom:25px;
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+}
+
+.item{
+
+background:#1e1e1e;
+
+padding:25px;
+
+border-radius:16px;
+
+text-align:center;
+}
+
+.buttons{
+text-align:center;
+margin-top:30px;
+}
+
 .btn{
-display:inline-block;padding:15px 28px;margin:10px;
-border-radius:40px;text-decoration:none;font-weight:bold
+
+display:inline-block;
+
+padding:15px 30px;
+
+margin:10px;
+
+border-radius:40px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
 }
-.gold{background:#d4af37;color:#000}
-.outline{border:1px solid #d4af37;color:#d4af37}
-.countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.box{background:#1e1e1e;padding:20px;border-radius:16px;min-width:100px}
-.box span{display:block;color:#d4af37;font-size:2rem;font-weight:bold}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+
+.gold{
+background:#d4af37;
+color:black;
+}
+
+.outline{
+border:1px solid #d4af37;
+color:#d4af37;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.box{
+
+background:#1e1e1e;
+
+padding:20px;
+
+border-radius:16px;
+
+min-width:110px;
+
+text-align:center;
+}
+
+.box span{
+
+display:block;
+
+font-size:2rem;
+
+font-weight:bold;
+
+color:#d4af37;
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:15px;
+}
+
 .placeholder{
-height:220px;border-radius:18px;
-background:linear-gradient(135deg,#1c1c1c,#2b2b2b);
-display:flex;align-items:center;justify-content:center;color:#777
+
+height:220px;
+
+border-radius:18px;
+
+background:
+linear-gradient(135deg,
+#1c1c1c,
+#2b2b2b);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:#777;
 }
+
+/* ANIMACIONES */
+
 .reveal{
 opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
+transform:translateY(50px);
+transition:all .9s ease;
 }
+
 .reveal.visible{
 opacity:1;
 transform:translateY(0);
 }
-.music{
-position:fixed;
-top:15px;
-right:15px;
-z-index:1000;
+
+footer{
+padding:40px;
+text-align:center;
+color:#aaa;
 }
-footer{text-align:center;padding:40px;color:#aaa}
+
 </style>
+
 </head>
+
 <body>
 
-<div class="music">
-<audio controls>
-<source src="sweet_child_o_mine.aac" type="audio/aac">
-Tu navegador no soporta audio HTML5.
-</audio>
+<!-- BIENVENIDA -->
+
+<div id="pantallaInicio">
+
+<div class="contenidoInicio">
+
+<h2>✨ Bienvenido ✨</h2>
+
+<h1>Santiago</h1>
+
+<p>Celebración de XV Años</p>
+
+<button onclick="entrarInvitacion()">
+
+✨ ENTRAR ✨
+
+</button>
+
 </div>
+
+</div>
+
+<!-- MUSICA -->
+
+<audio id="musica" loop>
+
+<source
+  src="sweet_child_o_mine.aac"
+type="audio/aac">
+
+</audio>
 
 <section class="hero">
+
 <div>
+
 <h1>Santiago</h1>
-<h2>Celebrando 15 Años</h2>
-<p>19 de Julio de 2026 · 3:00 PM</p>
+
+<h2>Celebrando XV Años</h2>
+
+<p style="margin-top:20px">
+19 de Julio de 2026 · 3:00 PM
+</p>
+
 </div>
+
 </section>
 
 <section class="section reveal">
+
 <div class="card">
-<h2 class="title">✨ Estás Invitado ✨</h2>
+
+<h2 class="title">
+✨ Estás Invitado ✨
+</h2>
+
 <p style="text-align:center">
-Con gran alegría te invitamos a compartir la celebración de los 15 años de Santiago.
+
+Con gran alegría te invitamos a compartir
+la celebración de los XV años de Santiago.
+
 </p>
+
 <div class="grid" style="margin-top:25px">
-<div class="item">📅<br>19 de Julio de 2026</div>
-<div class="item">🕒<br>3:00 PM</div>
-<div class="item">📍<br>Neapolis Jardín de Eventos</div>
+
+<div class="item">
+📅<br><br>
+19 de Julio de 2026
 </div>
-<p style="text-align:center;margin-top:20px">
-<a class="btn gold" href="https://wa.me/524423387548?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%2015%20años%20de%20Santiago">Confirmar asistencia</a>
-<a class="btn outline" href="https://maps.app.goo.gl/VtwaLq1kcqJ4M3eT8?g_st=ac">Ver ubicación</a>
-</p>
+
+<div class="item">
+🕒<br><br>
+3:00 PM
 </div>
+
+<div class="item">
+📍<br><br>
+Neapolis Jardín de Eventos
+</div>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn gold"
+target="_blank"
+href="https://wa.me/524423387548?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%2015%20años%20de%20Santiago">
+
+Confirmar asistencia
+
+</a>
+
+<a class="btn outline"
+target="_blank"
+href="https://maps.app.goo.gl/VtwaLq1kcqJ4M3eT8?g_st=ac">
+
+Ver ubicación
+
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 <section class="section reveal">
-<h2 class="title">⏳ Cuenta Regresiva</h2>
+
+<h2 class="title">
+⏳ Cuenta Regresiva
+</h2>
+
 <div class="countdown">
-<div class="box"><span id="days">0</span>Días</div>
-<div class="box"><span id="hours">0</span>Horas</div>
-<div class="box"><span id="minutes">0</span>Minutos</div>
-<div class="box"><span id="seconds">0</span>Segundos</div>
+
+<div class="box">
+<span id="days">0</span>
+Días
 </div>
+
+<div class="box">
+<span id="hours">0</span>
+Horas
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+Minutos
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+Segundos
+</div>
+
+</div>
+
 </section>
 
 <section class="section reveal">
+
 <div class="card">
-<h2 class="title">📸 Galería</h2>
+
+<h2 class="title">
+📸 Galería
+</h2>
+
 <div class="gallery">
-<div class="placeholder">Foto futura</div>
-<div class="placeholder">Foto futura</div>
-<div class="placeholder">Foto futura</div>
+
+<div class="placeholder">
+Foto futura
 </div>
+
+<div class="placeholder">
+Foto futura
 </div>
+
+<div class="placeholder">
+Foto futura
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<footer>Familia Fierros Ruiz · ¡Te esperamos!</footer>
+<footer>
+
+Familia Fierros Ruiz · ¡Te esperamos!
+
+</footer>
 
 <script>
-const eventDate=new Date("2026-07-19T15:00:00").getTime();
+
+/* ENTRAR */
+
+function entrarInvitacion(){
+
+document
+.getElementById("musica")
+.play();
+
+document
+.getElementById("pantallaInicio")
+.style.display="none";
+
+}
+
+/* CUENTA REGRESIVA */
+
+const eventDate =
+new Date("2026-07-19T15:00:00").getTime();
+
 setInterval(()=>{
-const now=new Date().getTime();
-const d=eventDate-now;
-days.innerHTML=Math.max(0,Math.floor(d/86400000));
-hours.innerHTML=Math.max(0,Math.floor((d%86400000)/3600000));
-minutes.innerHTML=Math.max(0,Math.floor((d%3600000)/60000));
-seconds.innerHTML=Math.max(0,Math.floor((d%60000)/1000));
+
+const now =
+new Date().getTime();
+
+const d =
+eventDate - now;
+
+document.getElementById("days")
+.innerHTML =
+Math.max(0,
+Math.floor(d/86400000));
+
+document.getElementById("hours")
+.innerHTML =
+Math.max(0,
+Math.floor((d%86400000)/3600000));
+
+document.getElementById("minutes")
+.innerHTML =
+Math.max(0,
+Math.floor((d%3600000)/60000));
+
+document.getElementById("seconds")
+.innerHTML =
+Math.max(0,
+Math.floor((d%60000)/1000));
+
 },1000);
 
-const observer=new IntersectionObserver(entries=>{
+/* ANIMACIONES */
+
+const observer =
+new IntersectionObserver(entries=>{
+
 entries.forEach(entry=>{
-if(entry.isIntersecting) entry.target.classList.add('visible');
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
 });
+
 });
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
 </script>
 
 </body>
