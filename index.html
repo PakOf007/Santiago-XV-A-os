@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santiago | 15 Años</title>
+<style>
+body{font-family:Arial,sans-serif;background:#0f0f0f;color:white;text-align:center;margin:0}
+.hero{padding:80px 20px}
+h1{color:#d4af37;font-size:64px}
+.card{max-width:800px;margin:20px auto;background:#1a1a1a;padding:30px;border-radius:20px}
+.btn{display:inline-block;padding:15px 25px;margin:10px;border-radius:30px;text-decoration:none}
+.gold{background:#d4af37;color:black}
+.dark{border:1px solid #d4af37;color:#d4af37}
+.countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.box{background:#222;padding:15px;border-radius:10px;min-width:90px}
+.box span{display:block;color:#d4af37;font-size:28px;font-weight:bold}
+</style>
+</head>
+<body>
 
+<div class="hero">
+<h1>Santiago</h1>
+<h2>Celebrando 15 años</h2>
+<p>19 de julio de 2026 · 3:00 PM</p>
+</div>
+
+<div class="card">
+<h2>Detalles del Evento</h2>
+<p><b>Fecha:</b> 19 de julio de 2026</p>
+<p><b>Hora:</b> 3:00 PM</p>
+<p><b>Lugar:</b> Neapolis Jardín de Eventos</p>
+
+<a class="btn gold" href="https://wa.me/524423387548?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%2015%20años%20de%20Santiago">Confirmar asistencia</a>
+
+<a class="btn dark" href="https://maps.app.goo.gl/VtwaLq1kcqJ4M3eT8?g_st=ac">Ver ubicación</a>
+</div>
+
+<h2>Cuenta Regresiva</h2>
+<div class="countdown">
+<div class="box"><span id="days">0</span>Días</div>
+<div class="box"><span id="hours">0</span>Horas</div>
+<div class="box"><span id="minutes">0</span>Minutos</div>
+<div class="box"><span id="seconds">0</span>Segundos</div>
+</div>
+
+<script>
+const eventDate = new Date("2026-07-19T15:00:00").getTime();
+setInterval(()=>{
+const now = new Date().getTime();
+const d = eventDate-now;
+document.getElementById("days").innerHTML=Math.max(0,Math.floor(d/(1000*60*60*24)));
+document.getElementById("hours").innerHTML=Math.max(0,Math.floor((d%(1000*60*60*24))/(1000*60*60)));
+document.getElementById("minutes").innerHTML=Math.max(0,Math.floor((d%(1000*60*60))/(1000*60)));
+document.getElementById("seconds").innerHTML=Math.max(0,Math.floor((d%(1000*60))/1000));
+},1000);
+</script>
+
+</body>
+</html>
