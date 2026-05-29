@@ -9,7 +9,73 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* Partículas doradas */
 
+.particle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    background:#d4af37;
+    border-radius:50%;
+    box-shadow:0 0 10px #d4af37;
+    animation:floatParticle linear infinite;
+    opacity:.7;
+    pointer-events:none;
+}
+
+@keyframes floatParticle{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:.8;
+    }
+    80%{
+        opacity:.8;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+/* Corona */
+
+.crown{
+    font-size:3rem;
+    margin-bottom:15px;
+    animation:crownFloat 3s ease-in-out infinite;
+}
+
+@keyframes crownFloat{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* Destellos */
+
+.sparkle{
+    position:absolute;
+    color:#d4af37;
+    font-size:20px;
+    animation:sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle{
+    0%,100%{
+        opacity:.3;
+        transform:scale(.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+}
 *{
 margin:0;
 padding:0;
@@ -309,7 +375,17 @@ color:#aaa;
 
 <h2>✨ Bienvenido ✨</h2>
 
+<div class="crown">👑</div>
+
+<div style="position:relative; display:inline-block;">
+
+<span class="sparkle" style="left:-30px; top:20px;">✨</span>
+
 <h1>Santiago</h1>
+
+<span class="sparkle" style="right:-30px; top:20px;">✨</span>
+
+</div>
 
 <p>Celebración de XV Años</p>
 
@@ -566,6 +642,24 @@ document
 .forEach(el=>observer.observe(el));
 
 </script>
+<script>
 
+for(let i=0;i<40;i++){
+
+const p=document.createElement('div');
+
+p.classList.add('particle');
+
+p.style.left=Math.random()*100+'vw';
+
+p.style.animationDuration=(10+Math.random()*15)+'s';
+
+p.style.animationDelay=(Math.random()*10)+'s';
+
+document.body.appendChild(p);
+
+}
+
+</script>
 </body>
 </html>
