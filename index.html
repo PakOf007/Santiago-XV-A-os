@@ -40,6 +40,42 @@
     }
 }
 
+.scroll-indicator{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    cursor:pointer;
+    z-index:100;
+}
+
+.scroll-text{
+    color:#d4af37;
+    font-size:0.9rem;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    opacity:0.8;
+}
+
+.scroll-arrow{
+    font-size:3rem;
+    color:#d4af37;
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px #d4af37,
+        0 0 30px #d4af37;
+    animation:arrowBounce 2s infinite;
+}
+
+@keyframes arrowBounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(12px);
+    }
+}    
 /* Corona */
 
 .crown{
@@ -178,6 +214,7 @@ text-shadow:
 .hero{
 
 min-height:100vh;
+position:relative;
 
 display:flex;
 justify-content:center;
@@ -424,7 +461,21 @@ type="audio/aac">
 <p style="margin-top:20px">
 19 de Julio de 2026 · 3:00 PM
 </p>
+<div class="scroll-indicator"
+     onclick="window.scrollTo({
+         top: window.innerHeight,
+         behavior: 'smooth'
+     })">
 
+    <div class="scroll-text">
+        Desliza hacia abajo
+    </div>
+
+    <div class="scroll-arrow">
+        ⌄
+    </div>
+
+</div>
 </div>
 
 </section>
