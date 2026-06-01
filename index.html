@@ -148,17 +148,22 @@ z-index:99999;
 }
 
 .contenidoInicio{
-text-align:center;
+    text-align:center;
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
 }
 
 .contenidoInicio h1{
-font-size:6rem;
-color:#d4af37;
-text-shadow:
-0 0 15px #d4af37,
-0 0 30px #d4af37,
-0 0 60px #d4af37;
-animation:glow 2s infinite alternate;
+    font-size:clamp(3rem, 12vw, 6rem);
+    color:#d4af37;
+    text-shadow:
+    0 0 15px #d4af37,
+    0 0 30px #d4af37,
+    0 0 60px #d4af37;
+    animation:glow 2s infinite alternate;
+    width:100%;
+    margin:0 auto;
 }
 
 .contenidoInicio h2{
@@ -486,7 +491,7 @@ color:#aaa;
 
 <div class="crown">👑</div>
 
-<div style="position:relative; display:inline-block;">
+<div style="position:relative; display:block; width:100%;">
 
 <span class="sparkle" style="left:-30px; top:20px;">✨</span>
 
