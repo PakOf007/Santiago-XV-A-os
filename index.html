@@ -285,14 +285,29 @@ gap:20px;
 }
 
 .item{
+    background:rgba(255,255,255,0.03);
+    padding:40px 25px;
+    border-radius:25px;
+    text-align:center;
+    transition:.3s;
+}
 
-background:#1e1e1e;
+.item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(212,175,55,.15);
+}
+    .label{
+    color:#d4af37;
+    font-size:0.9rem;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
 
-padding:25px;
-
-border-radius:16px;
-
-text-align:center;
+.value{
+    color:white;
+    font-size:1.4rem;
+    line-height:1.6;
 }
 
 .buttons{
@@ -558,20 +573,22 @@ la celebración de los XV años de Santiago.
 
 <div class="grid" style="margin-top:25px">
 
-<div class="item">
-📅<br><br>
-19 de Julio de 2026
-</div>
+    <div class="item">
+        <div class="label">📅 FECHA</div>
+        <div class="value">19 de Julio de 2026</div>
+    </div>
 
-<div class="item">
-🕒<br><br>
-2:30 PM
-</div>
+    <div class="item">
+        <div class="label">🕒 HORA</div>
+        <div class="value">2:30 PM</div>
+    </div>
 
-<div class="item">
-📍<br><br>
-Neapolis Jardín de Eventos
-</div>
+    <div class="item">
+        <div class="label">📍 LUGAR</div>
+        <div class="value">
+            Neapolis Jardín de Eventos
+        </div>
+    </div>
 
 </div>
 
