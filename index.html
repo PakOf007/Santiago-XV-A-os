@@ -402,6 +402,45 @@ text-align:center;
 color:#aaa;
 }
 
+.gallery-grid img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 45px rgba(212,175,55,.6);
+}
+
+/* GALERÍA */
+
+.galeria{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.galeria h2{
+    color:#d4af37;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    text-shadow:0 0 15px rgba(212,175,55,.6);
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 0 20px rgba(212,175,55,.2);
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 45px rgba(212,175,55,.6);
+}
+    
 </style>
 
 </head>
@@ -569,6 +608,22 @@ Segundos
 </div>
 
 </section>
+
+
+<!-- GALERÍA DE FOTOS -->
+<section class="galeria reveal">
+
+    <h2>Santiago</h2>
+
+    <div class="gallery-grid">
+        <img src="Imagen_1.png" alt="Santiago">
+        <img src="Imagen_2.png" alt="Santiago">
+        <img src="Imagen_3.png" alt="Santiago">
+        <img src="Imagen_4.png" alt="Santiago">
+    </div>
+
+</section>
+
 
   <section class="section reveal">
 
