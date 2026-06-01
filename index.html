@@ -402,12 +402,7 @@ text-align:center;
 color:#aaa;
 }
 
-.gallery-grid img:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 45px rgba(212,175,55,.6);
-}
-
-/* GALERÍA */
+/* ===== GALERIA PREMIUM ===== */
 
 .galeria{
     padding:100px 20px;
@@ -416,29 +411,49 @@ color:#aaa;
 
 .galeria h2{
     color:#d4af37;
-    font-size:2.5rem;
+    font-size:2.8rem;
     margin-bottom:50px;
-    text-shadow:0 0 15px rgba(212,175,55,.6);
+    text-shadow:0 0 20px rgba(212,175,55,.7);
+}
+
+.gallery-featured{
+    max-width:1000px;
+    margin:0 auto 30px auto;
+}
+
+.gallery-featured img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(212,175,55,.25);
+    transition:.4s;
+}
+
+.gallery-featured img:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 50px rgba(212,175,55,.5);
 }
 
 .gallery-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-    max-width:1200px;
+    gap:20px;
+    max-width:1000px;
     margin:auto;
 }
 
 .gallery-grid img{
     width:100%;
+    height:400px;
+    object-fit:cover;
     border-radius:20px;
+    cursor:pointer;
     transition:.4s;
-    box-shadow:0 0 20px rgba(212,175,55,.2);
+    box-shadow:0 0 20px rgba(212,175,55,.15);
 }
 
 .gallery-grid img:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 45px rgba(212,175,55,.6);
+    transform:translateY(-8px);
+    box-shadow:0 0 40px rgba(212,175,55,.5);
 }
     
 </style>
@@ -613,10 +628,13 @@ Segundos
 <!-- GALERÍA DE FOTOS -->
 <section class="galeria reveal">
 
-    <h2>Santiago</h2>
+    <h2>✨ Santiago ✨</h2>
+
+    <div class="gallery-featured">
+        <img src="Imagen_1.png" alt="Santiago">
+    </div>
 
     <div class="gallery-grid">
-        <img src="Imagen_1.png" alt="Santiago">
         <img src="Imagen_2.png" alt="Santiago">
         <img src="Imagen_3.png" alt="Santiago">
         <img src="Imagen_4.png" alt="Santiago">
