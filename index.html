@@ -790,96 +790,93 @@ Si deseas tener un detalle especial con Santiago, una lluvia de sobres será bie
 </footer>
 
 <script>
+    // Función principal para iniciar la invitación al dar clic en Entrar
+    function entrarInvitacion() {
+        const pantalla = document.getElementById('pantallaInicio');
+        const musica = document.getElementById('musica');
+        
+        pantalla.style.transition = 'opacity 0.8s ease';
+        pantalla.style.opacity = '0';
+        
+        setTimeout(() => {
+            pantalla.style.display = 'none';
+            musica.play().catch(error => console.log("La reproducción automática fue bloqueada por el navegador. Requiere interacción del usuario."));
+        }, 800);
 
-/* ENTRAR */
+        // ACTIVACIÓN DE LOS EFECTOS VISUALES SIMULTÁNEOS
+        setInterval(createParticle, 250);  // Lluvia de esferas doradas flotantes
+        setInterval(createSparkle, 400);   // Lluvia de destellos brillantes (Solución al error)
+    }
 
-function entrarInvitacion(){
+    // 1. Generador de partículas doradas flotantes
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + 'vw';
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.animationDuration = Math.random() * 3 + 4 + 's';
+        document.body.appendChild(particle);
+        setTimeout(() => { particle.remove(); }, 7000);
+    }
 
-document
-.getElementById("musica")
-.play();
+    // 2. Generador de la lluvia de destellos brillantes (✨)
+    function createSparkle() {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.innerHTML = '✨'; // Inserta el carácter de destello
+        sparkle.style.left = Math.random() * 100 + 'vw';
+        sparkle.style.top = Math.random() * 100 + 'vh';
+        sparkle.style.position = 'fixed';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1';
+        
+        // Asigna un tamaño y tiempo de parpadeo aleatorio para dar dinamismo
+        const scale = Math.random() * 0.8 + 0.5;
+        sparkle.style.transform = `scale(${scale})`;
+        sparkle.style.animationDuration = Math.random() * 1.5 + 1.5 + 's';
+        
+        document.body.appendChild(sparkle);
+        
+        // Remueve el destello después de que complete su ciclo de parpadeo
+        setTimeout(() => { sparkle.remove(); }, 3000);
+    }
 
-document
-.getElementById("pantallaInicio")
-.style.display="none";
+    // 3. Animación de aparición gradual al hacer scroll (Reveal)
+    const revealElements = document.querySelectorAll('.reveal');
+    function checkReveal() {
+        const triggerBottom = window.innerHeight * 0.85;
+        revealElements.forEach(el => {
+            const boxTop = el.getBoundingClientRect().top;
+            if (boxTop < triggerBottom) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', checkReveal);
+    checkReveal(); // Ejecución de control inicial
 
-}
+    // 4. Temporizador de cuenta regresiva para el gran día
+    const eventDate = new Date('July 19, 2026 10:00:00').getTime();
+    
+    setInterval(() => {
+        const now = new Date().getTime();
+        const difference = eventDate - now;
 
-/* CUENTA REGRESIVA */
+        if (difference > 0) {
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-const eventDate =
-new Date("2026-07-19T15:00:00").getTime();
-
-setInterval(()=>{
-
-const now =
-new Date().getTime();
-
-const d =
-eventDate - now;
-
-document.getElementById("days")
-.innerHTML =
-Math.max(0,
-Math.floor(d/86400000));
-
-document.getElementById("hours")
-.innerHTML =
-Math.max(0,
-Math.floor((d%86400000)/3600000));
-
-document.getElementById("minutes")
-.innerHTML =
-Math.max(0,
-Math.floor((d%3600000)/60000));
-
-document.getElementById("seconds")
-.innerHTML =
-Math.max(0,
-Math.floor((d%60000)/1000));
-
-},1000);
-
-/* ANIMACIONES */
-
-const observer =
-new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("visible");
-
-}
-
-});
-
-});
-
-document
-.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
-
-</script>
-<script>
-
-for(let i=0;i<20;i++){
-
-const p=document.createElement('div');
-
-p.classList.add('particle');
-
-p.style.left=Math.random()*100+'vw';
-
-p.style.animationDuration=(10+Math.random()*15)+'s';
-
-p.style.animationDelay=(Math.random()*10)+'s';
-
-document.body.appendChild(p);
-
-}
-
+            // Vinculación de los contenedores numéricos con validación de dos dígitos
+            if(document.getElementById('dias')) document.getElementById('dias').innerText = d < 10 ? '0' + d : d;
+            if(document.getElementById('horas')) document.getElementById('horas').innerText = h < 10 ? '0' + h : h;
+            if(document.getElementById('minutos')) document.getElementById('minutos').innerText = m < 10 ? '0' + m : m;
+            if(document.getElementById('segundos')) document.getElementById('segundos').innerText = s < 10 ? '0' + s : s;
+        }
+    }, 1000);
 </script>
 </body>
 </html>
