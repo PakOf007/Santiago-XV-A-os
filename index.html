@@ -858,23 +858,30 @@ Si deseas tener un detalle especial con Santiago, una lluvia de sobres será bie
     checkReveal(); // Ejecución de control inicial
 
     // 4. Temporizador de cuenta regresiva para el gran día
-    const eventDate = new Date('July 19, 2026 10:00:00').getTime();
+    const eventDate = new Date('July 19, 2026 15:00:00').getTime(); // Ajustado a las 3:00 PM de la recepción
     
     setInterval(() => {
         const now = new Date().getTime();
         const difference = eventDate - now;
 
         if (difference > 0) {
+            // Todos los cálculos matemáticos unificados usando "difference"
             const d = Math.floor(difference / (1000 * 60 * 60 * 24));
             const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-            // Vinculación de los contenedores numéricos con validación de dos dígitos
+            // Vinculación exacta con los textos de tus cajitas HTML
             if(document.getElementById('dias')) document.getElementById('dias').innerText = d < 10 ? '0' + d : d;
             if(document.getElementById('horas')) document.getElementById('horas').innerText = h < 10 ? '0' + h : h;
             if(document.getElementById('minutos')) document.getElementById('minutos').innerText = m < 10 ? '0' + m : m;
             if(document.getElementById('segundos')) document.getElementById('segundos').innerText = s < 10 ? '0' + s : s;
+        } else {
+            // Bloque por si la fecha ya llegó a su fin
+            if(document.getElementById('dias')) document.getElementById('dias').innerText = '00';
+            if(document.getElementById('horas')) document.getElementById('horas').innerText = '00';
+            if(document.getElementById('minutos')) document.getElementById('minutos').innerText = '00';
+            if(document.getElementById('segundos')) document.getElementById('segundos').innerText = '00';
         }
     }, 1000);
 </script>
